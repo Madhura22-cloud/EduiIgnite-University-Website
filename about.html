@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+    
+  </head>
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"><img src="images/eduignite.png"></a>
+        <div class ="nav-links" id="navLinks">
+          <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="course.html">COURSE</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="search_bar.html">SEARCH</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+
+      </nav> 
+<h1>About Us</h1>
+    </section>
+    <!------------About us content-->
+    <section class="about-us">
+      <div class="row">
+        <div class="about-col">
+          <h1>We Are World's Largest University</h1>
+          <p>At Eduignite, we’re committed to providing an innovative, inclusive, and supportive environment
+            where students can thrive. Our goal is to offer a high-quality education that blends academic
+            excellence with real-world experience, preparing students for success in the global workforce.
+            state-of-the-art facilities, a diverse community, and dedicated faculty, Eduignite fosters 
+            a culture of curiosity, collaboration, and leadership</p>
+            <div style=" display:flex; justify-content: center; align-items: center;">
+              <a href="index.html" class="hero-btn red-btn">EXPLORE NOW</a>
+          </div>
+          
+            
+
+        </div>
+        <div class="about-col">
+          <img src="images/employees.jpeg">
+        </div>
+      </div>
+    </section>
+    
+  
+<!---------------Footer------------>
+<section class="footer">
+  <h4>About us</h4>
+  <p>At Eduignite, we believe in empowering students to reach their fullest potential. Established with the vision
+     of offering high-quality education that is accessible and relevant, our university is committed to fostering 
+     an environment of growth, innovation, and inclusivity. With state-of-the-art facilities, experienced faculty, 
+     and a wide range of programs, we provide a comprehensive education designed to equip students with the skills
+      and knowledge necessary for success in the global job market.<br>
+
+    Our mission is to provide a transformative learning experience that nurtures intellectual curiosity,
+     encourages leadership, and builds a strong community of diverse, ambitious individuals. Eduignite is not 
+     just a place to learn—it's a place to thrive.<br>
+    
+    We are proud to offer programs across multiple disciplines, from technology and business to the arts
+     and sciences. Our vibrant campus, coupled with international exchange opportunities and strong industry
+      partnerships, ensures our students are prepared to take on the world and make an impact.<br>
+    
+    Join us at Eduignite, where we ignite the passion for lifelong learning and career success.
+    
+    </p>
+    <div class="icons">
+     
+      <i class="fas fa-facebook"></i>
+      <i class="fas fa-twitter"></i>
+      <i class="fas fa-instagram"></i>
+      <i class="fas fa-linkedln"></i>
+       
+    </div>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+    <i class="fa fa-heart" aria-hidden="true"></i>
+
+</section>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!---------Javascript for Toggle Menu-------->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      function showMenu(){
+        navLinks.style.right = "0";
+      }
+      function hideMenu(){
+        navLinks.style.right = "-200px";
+      }
+
+    </script>
+
+
+
+
+  </body>
+</html>
