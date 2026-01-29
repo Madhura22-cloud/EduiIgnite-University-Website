@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>University Website Design</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css"
+    />
+
+    <style>
+      /* Centering campus images */
+      .campus-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 40px 20px;
+      }
+
+      .campus-card {
+        width: 250px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease;
+      }
+
+      .campus-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 10px 0;
+      }
+
+      .search-container {
+        text-align: center;
+        margin: 40px 0;
+      }
+
+      .search-bar {
+        padding: 10px;
+        width: 300px;
+        font-size: 16px;
+      }
+
+      .visit-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .info-text {
+        text-align: center;
+        margin-bottom: 20px;
+        font-style: italic;
+        color: #555;
+      }
+
+      .footer {
+        text-align: center;
+        padding: 40px;
+        background-color: #f4f4f4;
+      }
+
+      .icons i {
+        margin: 10px;
+        font-size: 20px;
+      }
+
+      .subset-header {
+        background-image: url('images/search.jpg');
+        background-size: cover;
+        padding: 40px;
+        text-align: center;
+        color: white;
+      }
+
+      nav {
+        display: flex;
+        padding: 2% 6%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav img {
+        width: 300px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      nav ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+        
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="subset-header">
+      <nav>
+        <a href="index.html"><img src="images/eduignite.png" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="course.html">COURSE</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="search_bar.html">SEARCH</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+      </nav>
+      <h1>SEARCH HERE</h1>
+      
+    </section>
+   
+
+
+    <div class="search-container">
+      <h1>Search Universities</h1>
+      <form action="search_results.php" method="GET">
+        <input type="text" name="query" class="search-bar" placeholder="Enter search term" required />
+        <button type="submit" class="visit-btn">Search</button>
+      </form>
+    </div>
+
+    <p class="info-text">Click on the image to view a list of universities in each country.</p>
+
+    <div class="campus-row">
+      <a href="india.html" class="campus-card">
+        <img src="images/india.avif" alt="India Campus" />
+        <div class="overlay"><h3>INDIA</h3></div>
+      </a>
+      <a href="london.html" class="campus-card">
+        <img src="images/camus 1.jpeg" alt="London Campus" />
+        <div class="overlay"><h3>LONDON</h3></div>
+      </a>
+      <a href="newyork.html" class="campus-card">
+        <img src="images/campus2.jpg" alt="New York Campus" />
+        <div class="overlay"><h3>NEW YORK</h3></div>
+      </a>
+      <a href="switzerland.html" class="campus-card">
+        <img src="images/campus3.jpg" alt="Switzerland Campus" />
+        <div class="overlay"><h3>SWITZERLAND</h3></div>
+      </a>
+      <a href="usa.html" class="campus-card">
+        <img src="images/usa.jpg" alt="USA Campus" />
+        <div class="overlay"><h3>USA</h3></div>
+      </a>
+      <a href="malaysia.html" class="campus-card">
+        <img src="images/malaysia.webp" alt="Malaysia Campus" />
+        <div class="overlay"><h3>MALAYSIA</h3></div>
+      </a>
+      <a href="maldives.html" class="campus-card">
+        <img src="images/maldives.jpg" alt="Maldives Campus" />
+        <div class="overlay"><h3>MALDIVES</h3></div>
+      </a>
+      <a href="southafrica.html" class="campus-card">
+        <img src="images/southafrica.jpeg" alt="South Africa Campus" />
+        <div class="overlay"><h3>SOUTH AFRICA</h3></div>
+      </a>
+      <a href="germany.html" class="campus-card">
+        <img src="images/germany.jpeg" alt="Germany Campus" />
+        <div class="overlay"><h3>GERMANY</h3></div>
+      </a>
+      <a href="china.html" class="campus-card">
+        <img src="images/china.jpeg" alt="China Campus" />
+        <div class="overlay"><h3>CHINA</h3></div>
+      </a>
+      <a href="australia.html" class="campus-card">
+        <img src="images/australia.jpeg" alt="Australia Campus" />
+        <div class="overlay"><h3>AUSTRALIA</h3></div>
+      </a>
+      <a href="uk.html" class="campus-card">
+        <img src="images/uk.jpg" alt="UK Campus" />
+        <div class="overlay"><h3>UK</h3></div>
+      </a>
+      <a href="japan.html" class="campus-card">
+        <img src="images/japan.jpg" alt="Japan Campus" />
+        <div class="overlay"><h3>JAPAN</h3></div>
+      </a>
+      <a href="singapore.html" class="campus-card">
+        <img src="images/singapore.webp" alt="Singapore Campus" />
+        <div class="overlay"><h3>SINGAPORE</h3></div>
+      </a>
+      <a href="canada.html" class="campus-card">
+        <img src="images/canada.jpg" alt="Canada Campus" />
+        <div class="overlay"><h3>CANADA</h3></div>
+      </a>
+    </div>
+
+  
+   
+
+    <section class="footer">
+      <h4>About us</h4>
+      <p>
+        At Eduignite, we believe in empowering students to reach their fullest potential...
+      </p>
+      <div class="icons">
+        <i class="fas fa-facebook"></i>
+        <i class="fas fa-twitter"></i>
+        <i class="fas fa-instagram"></i>
+        <i class="fas fa-linkedln"></i>
+      </div>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </section>
+
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
