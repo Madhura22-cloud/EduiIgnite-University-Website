@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Eduignite</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.6.0/css/fontawesome.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <section class="sub-header">
+    <nav>
+      <a href="index.html"><img src="images/eduignite.png"></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" aria-hidden="true" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="course.html">COURSE</a></li>
+          <li><a href="blog.html">BLOG</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+          <li><a href="search_bar.html">SEARCH</a></li>
+        </ul>
+         <div class="hamburger" onclick="toggleSidebar()">☰</div>
+
+<div id="rightSidebar" class="sidebar">
+  <span class="close-btn" onclick="toggleSidebar()">X</span>
+  <h2>Dashboard</h2>
+
+  <a href="admin-module.html">Admin Module</a>
+  <a href="student-module.html">Student Module</a>
+</div>
+
+
+      </div>
+      <i class="fa fa-bars" aria-hidden="true" onclick="showMenu()"></i>
+    </nav>
+    <h1>Contact Us</h1>
+  </section>
+
+  <!-- Location / Map -->
+  <section class="location">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60469.31194267606!2d73.7486000963239!3d18.69394885275748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b709250d24fb%3A0xc2b7fde7170c5b6e!2sTalwade%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411062!5e0!3m2!1sen!2sin!4v1738916262923!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-us">
+    <div class="row">
+      <!-- Contact Info -->
+      <div class="contact-col">
+        <div>
+          <i class="fa fa-home"></i>
+          <span>
+            <h5>Near Bhakti-Shakti Road Nigdi Eduignite Building Pimpri,Chinchwad, PCMC Pune 411062</h5>
+          </span>
+        </div>
+        <div>
+          <i class="fa fa-phone"></i>
+          <span>
+            <h5>+91 1234 432 231</h5>
+            <p>Monday to Saturday, 10AM to 6PM</p>
+          </span>
+        </div>
+        <div>
+          <i class="fa fa-envelope"></i>
+          <span>
+            <h5>eduigniteuniversity@2005gmail.com</h5>
+            <p>Email us for any query — we are here to help!</p>
+          </span>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-col">
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required><br><br>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required><br><br>
+
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required><br><br>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea><br><br>
+
+          <button type="submit" class="hero-btn red-btn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <section class="footer">
+    <h4>About us</h4>
+    <p>At Eduignite, we believe in empowering students to reach their fullest potential. ...</p>
+    <div class="icons">
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+    <div>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-heart"></i>
+      <i class="fa fa-heart"></i>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script>
+    // Toggle nav menu
+    var navLinks = document.getElementById("navLinks");
+    function showMenu() { navLinks.style.right = "0"; }
+    function hideMenu() { navLinks.style.right = "-200px"; }
+
+    // Contact Form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+      };
+
+      fetch('/api/contact', {   // <-- Spring Boot endpoint
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(res => {
+        if(res.ok) return res.text();
+        else throw new Error('Failed to submit form');
+      })
+      .then(msg => {
+        alert(msg);
+        document.getElementById('contactForm').reset();
+      })
+      .catch(err => {
+        console.error(err);
+        alert('Something went wrong! Please try again later.');
+      });
+    });
+    function openSidebar() {
+  document.getElementById("rightSidebar").style.right = "0";
+}
+function closeSidebar() {
+  document.getElementById("rightSidebar").style.right = "-300px";
+}
+function toggleSidebar() {
+  document.getElementById("rightSidebar").classList.toggle("open");
+}
+  </script>
+
+</body>
+</html>

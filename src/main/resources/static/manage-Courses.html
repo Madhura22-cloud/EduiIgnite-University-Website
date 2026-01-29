@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Courses</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 30px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .add-btn {
+      display: inline-block;
+      margin-bottom: 15px;
+      padding: 10px 15px;
+      background: #2196F3;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    table {
+      width: 60%;
+      margin: auto;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background: #2196F3;
+      color: white;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    .action a {
+      text-decoration: none;
+      color: #2196F3;
+      font-weight: bold;
+      margin: 0 5px;
+    }
+
+    .action a.delete {
+      color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Manage Courses</h2>
+
+  <div style="text-align:center;">
+    <a class="add-btn" href="addCourse.html">+ Add New Course</a>
+  </div>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Course Name</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Computer Science</td>
+      <td class="action">
+        <a href="#">Edit</a> |
+        <a href="#" class="delete">Delete</a>
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

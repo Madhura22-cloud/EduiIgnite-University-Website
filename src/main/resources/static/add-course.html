@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Course</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #FF9800;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e68a00;
+    }
+  </style>
+</head>
+<body>
+  <h2>Add Course</h2>
+  <form action="submit-course.php" method="POST">
+    <input type="text" name="course_name" placeholder="Course Name" required>
+    <input type="text" name="duration" placeholder="Duration (e.g., 3 Months)" required>
+    <textarea name="description" placeholder="Course Description" rows="5"></textarea>
+    <button type="submit">Add Course</button>
+  </form>
+</body>
+</html>

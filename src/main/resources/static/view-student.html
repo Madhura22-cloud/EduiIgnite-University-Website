@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Students</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #2196F3;
+      color: white;
+    }
+    tr:hover {
+      background: #f1f1f1;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .edit-btn { background: #4CAF50; }
+    .delete-btn { background: #f44336; }
+  </style>
+</head>
+<body>
+  <h2>Students List</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Course</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>John Doe</td>
+      <td>john@example.com</td>
+      <td>Computer Science</td>
+      <td>
+        <button class="action-btn edit-btn">Edit</button>
+        <button class="action-btn delete-btn">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Jane Smith</td>
+      <td>jane@example.com</td>
+      <td>Information Technology</td>
+      <td>
+        <button class="action-btn edit-btn">Edit</button>
+        <button class="action-btn delete-btn">Delete</button>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

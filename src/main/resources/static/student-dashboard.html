@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f4f6f8; padding: 20px; }
+    h2 { text-align: center; color: #333; }
+    table { width: 100%; border-collapse: collapse; margin: 20px auto; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #2196F3; color: white; }
+    tr:hover { background: #f1f1f1; }
+    button { padding: 6px 12px; background: #4CAF50; border: none; border-radius: 5px; color: #fff; cursor: pointer; }
+    button:hover { background: #45a049; }
+    .my-courses { margin-top: 40px; text-align: center; }
+    .my-courses h3 { color: #333; }
+  </style>
+</head>
+<body>
+  <h2>Welcome, <span id="studentName"></span>!</h2>
+
+  <table id="coursesTable">
+    <tr>
+      <th>Course ID</th>
+      <th>Course Name</th>
+      <th>Description</th>
+      <th>Enroll</th>
+    </tr>
+  </table>
+
+  <div class="my-courses">
+    <h3>My Enrolled Course:</h3>
+    <ul id="enrolledCourse"></ul>
+  </div>
+
+  <script>
+    const studentId = localStorage.getItem('studentId');
+    document.getElementById('studentName').textContent = localStorage.getItem('studentName');
+    const coursesTable = document.getElementById('coursesTable');
+    const enrolledList = document.getElementById('enrolledCourse');
+
+    async function loadCourses() {
+      const res = await fetch('http://localhost:8080/api/students/courses');
+      const courses = await res.json();
+
+      courses.forEach(course => {
+        const row = coursesTable.insertRow();
+        row.insertCell(0).textContent = course.courseId;
+        row.insertCell(1).textContent = course.courseName;
+        row.insertCell(2).textContent = course.description;
+        const enrollBtn = document.createElement('button');
+        enrollBtn.textContent = 'Enroll';
+        enrollBtn.onclick = () => enrollCourse(course.courseId, course.courseName);
+        row.insertCell(3).appendChild(enrollBtn);
+      });
+    }
+
+    async function enrollCourse(courseId, courseName){
+      const res = await fetch(`http://localhost:8080/api/students/${studentId}/enroll/${courseId}`, { method: 'POST' });
+      if(res.ok){
+        alert(`Enrolled in ${courseName} successfully!`);
+        enrolledList.innerHTML = `<li>${courseName}</li>`; // show enrolled course
+      } else {
+        alert('Enrollment failed!');
+      }
+    }
+
+    loadCourses();
+  </script>
+</body>
+</html>

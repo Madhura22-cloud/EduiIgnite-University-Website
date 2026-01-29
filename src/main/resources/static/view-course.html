@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Courses</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px auto;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background: #FF9800;
+      color: white;
+    }
+    tr:hover {
+      background: #f1f1f1;
+    }
+    .action-btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #fff;
+    }
+    .edit-btn { background: #4CAF50; }
+    .delete-btn { background: #f44336; }
+  </style>
+</head>
+<body>
+  <h2>Courses List</h2>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Course Name</th>
+      <th>Duration</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Computer Science</td>
+      <td>6 Months</td>
+      <td>Learn programming and algorithms</td>
+      <td>
+        <button class="action-btn edit-btn">Edit</button>
+        <button class="action-btn delete-btn">Delete</button>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Information Technology</td>
+      <td>4 Months</td>
+      <td>Learn networking and databases</td>
+      <td>
+        <button class="action-btn edit-btn">Edit</button>
+        <button class="action-btn delete-btn">Delete</button>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
